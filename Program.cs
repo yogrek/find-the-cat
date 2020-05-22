@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Security.Cryptography;
 
 namespace find_the_cat
 {
@@ -6,7 +8,7 @@ namespace find_the_cat
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            GameSettings.StartGame();
         }
     }
 }

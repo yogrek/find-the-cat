@@ -9,6 +9,10 @@ namespace find_the_cat
         static void Main(string[] args)
         {
             GameSettings.StartGame();
+            while (true)
+            {
+                GameSettings.ReadCommand();
+            }
         }
     }
 }

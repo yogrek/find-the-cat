@@ -22,6 +22,8 @@ namespace find_the_cat
         // Number of vertical cells
         public static readonly int Ny = 10;
 
+        public static Player m_Player;
+
         private static string dialoguesPath = Directory.GetCurrentDirectory() + @"\dialogues";
 
         public static void StartGame()
@@ -31,7 +33,15 @@ namespace find_the_cat
             var acquaintance = ReadDialogue("acquaintance");
             acquaintance.ToList().ForEach(i => Console.Write(i.ToString()));
             var name = Console.ReadLine();
-            Console.WriteLine(name);
+
+            m_Player = CreatePlayer(name);
+        }
+
+        public static void ReadCommand()
+        {
+            var wait_command = ReadDialogue("wait_command");
+            wait_command.ToList().ForEach(i => Console.Write(i.ToString()));
+            var command = Console.ReadLine().ToLower();
         }
 
         private static string[] ReadDialogue(string fileName)

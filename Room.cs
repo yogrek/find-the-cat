@@ -42,6 +42,11 @@ namespace find_the_cat
 
         public void ShowItems()
         {
+            if (Items.Count == 0)
+            {
+                Console.WriteLine("В этой комнате ничего нет.");
+                return;
+            }
             Console.WriteLine("В этой комнате ты видишь:");
             foreach (var item in Items)
             {

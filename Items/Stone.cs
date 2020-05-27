@@ -4,8 +4,8 @@ using System.Text;
 
 namespace find_the_cat
 {
-    public class LivingItem : Item
+    public class Stone : Item
     {
-        public LivingItem() : base(name: "Камень", desc: "Обычный серый камень.", isAlive: false) { }
+        public Stone() : base(name: "Камень", desc: "Обычный серый камень.", isAlive: false) { }
     }
 }

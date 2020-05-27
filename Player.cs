@@ -49,7 +49,7 @@ namespace find_the_cat
                 default:
                     throw new ArgumentException("Invalid direction!");
             }
-            Console.WriteLine($"Я сейчас в комнате {CurrentRoom.X}, {CurrentRoom.Y}");
+            //Console.WriteLine($"Я сейчас в комнате {CurrentRoom.X}, {CurrentRoom.Y}");
         }
 
         public void LookAround()

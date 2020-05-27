@@ -122,9 +122,9 @@ namespace find_the_cat
                 {
                     Rooms[i, j] = new Room(i, j);
                     Rooms[i, j].GenerateItems(itemTypes);
-                    Console.Write($"({Rooms[i, j].X}, {Rooms[i, j].Y})  ");
+                    //Console.Write($"({Rooms[i, j].X}, {Rooms[i, j].Y})  ");
                 }
-                Console.WriteLine();
+                //Console.WriteLine();
             }
         }
 

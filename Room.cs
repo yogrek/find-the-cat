@@ -14,7 +14,12 @@ namespace find_the_cat
 
         public List<Item> Items;
 
-        public Room(int x, int y) => (X, Y) = (x, y);
+        public Room(int x, int y)
+        {
+            X = x;
+            Y = y;
+            Items = new List<Item>();
+        }
 
         public Room(Room r)
         {

@@ -15,12 +15,11 @@ namespace find_the_cat
         public static readonly int Nh = 10;
         // Number of vertical cells
         public static readonly int Nv = 10;
+        public static Room[,] Rooms = new Room[Nh, Nv];
 
-        public static Player m_Player;
-
+        private static Player m_Player;
         private static string dialoguesPath = Directory.GetCurrentDirectory() + @"\dialogues";
         private static List<Type> itemTypes = new List<Type>();
-        private static Room[,] rooms = new Room[Nh, Nv];
 
         static GameSettings()
         {
@@ -100,7 +99,7 @@ namespace find_the_cat
         private static Room GenerateRoom()
         {
             Random rnd = new Random();
-            return rooms[rnd.Next(Nh), rnd.Next(Nv)];
+            return Rooms[rnd.Next(Nh), rnd.Next(Nv)];
         }
 
         private static void GetTypes()
@@ -121,9 +120,9 @@ namespace find_the_cat
             {
                 for(int j = 0; j < Nv; j++)
                 {
-                    rooms[i, j] = new Room(i, j);
-                    rooms[i, j].GenerateItems(itemTypes);
-                    Console.Write($"({rooms[i, j].X}, {rooms[i, j].Y})  ");
+                    Rooms[i, j] = new Room(i, j);
+                    Rooms[i, j].GenerateItems(itemTypes);
+                    Console.Write($"({Rooms[i, j].X}, {Rooms[i, j].Y})  ");
                 }
                 Console.WriteLine();
             }
@@ -135,7 +134,8 @@ namespace find_the_cat
             int catX = rnd.Next(Nh);
             int catY = rnd.Next(Nv);
 
-            rooms[catX, catY].Items.Add(new Cat());
+            Rooms[catX, catY].Items.Add(new Cat());
+            Console.WriteLine($"Котик в комнате ({catX}, {catY})");
         }
 
         private static void Exit()

@@ -32,7 +32,6 @@ namespace find_the_cat
 
         public void Go(Direction dir)
         {
-            Console.WriteLine($"Я сейчас в комнате {CurrentRoom.X}, {CurrentRoom.Y}");
             switch (dir)
             {
                 case Direction.Up:
@@ -50,6 +49,7 @@ namespace find_the_cat
                 default:
                     throw new ArgumentException("Invalid direction!");
             }
+            Console.WriteLine($"Я сейчас в комнате {CurrentRoom.X}, {CurrentRoom.Y}");
         }
 
         public void LookAround()
@@ -79,7 +79,7 @@ namespace find_the_cat
         {
             if (!CurrentRoom.IsOnTopBorder())
             {
-                CurrentRoom.X--;
+                CurrentRoom = GameSettings.Rooms[CurrentRoom.X--, CurrentRoom.Y];
             }
             else
             {
@@ -91,7 +91,7 @@ namespace find_the_cat
         {
             if (!CurrentRoom.IsOnLeftBorder())
             {
-                CurrentRoom.Y--;
+                CurrentRoom = GameSettings.Rooms[CurrentRoom.X, CurrentRoom.Y--];
             }
             else
             {
@@ -103,7 +103,7 @@ namespace find_the_cat
         {
             if (!CurrentRoom.IsOnRightBorder())
             {
-                CurrentRoom.Y++;
+                CurrentRoom = GameSettings.Rooms[CurrentRoom.X, CurrentRoom.Y++];
             }
             else
             {
@@ -115,7 +115,7 @@ namespace find_the_cat
         {
             if (!CurrentRoom.IsOnBottomBorder())
             {
-                CurrentRoom.X++;
+                CurrentRoom = GameSettings.Rooms[CurrentRoom.X++, CurrentRoom.Y];
             }
             else
             {

@@ -71,7 +71,8 @@ namespace find_the_cat
                     m_Player.Go(Direction.Left);
                     break;
                 case "помощь":
-                    // TODO: вывести список команд
+                    var help = ReadDialogue("help");
+                    help.ToList().ForEach(i => Console.WriteLine(i.ToString()));
                     break;
                 case "выход":
                     Exit();

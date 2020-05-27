@@ -8,12 +8,16 @@
 
   <ItemGroup>
     <None Remove="dialogues\acquaintance.txt" />
+    <None Remove="dialogues\help.txt" />
     <None Remove="dialogues\wait_command.txt" />
     <None Remove="dialogues\welcome.txt" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="dialogues\acquaintance.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="dialogues\help.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="dialogues\wait_command.txt">

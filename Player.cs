@@ -67,7 +67,7 @@ namespace FindTheCat
             }
             else
             {
-                Console.WriteLine("Вы не можете взять этот предмет.");
+                Dialogues.Write("cannot_take");
             }
         }
 

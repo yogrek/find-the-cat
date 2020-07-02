@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <None Remove="dialogues\acquaintance.txt" />
+    <None Remove="dialogues\cannot_take.txt" />
     <None Remove="dialogues\help.txt" />
     <None Remove="dialogues\no_command_error.txt" />
     <None Remove="dialogues\no_east.txt" />
@@ -20,10 +21,14 @@
     <None Remove="dialogues\show_player_info.txt" />
     <None Remove="dialogues\wait_command.txt" />
     <None Remove="dialogues\welcome.txt" />
+    <None Remove="dialogues\wrong_name.txt" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="dialogues\acquaintance.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="dialogues\cannot_take.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="dialogues\help.txt">
@@ -57,6 +62,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="dialogues\welcome.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="dialogues\wrong_name.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

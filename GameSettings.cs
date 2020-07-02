@@ -30,10 +30,20 @@ namespace FindTheCat
         public static void StartGame()
         {
             Dialogues.Write("welcome");
+            var name = ReadName();
+            m_Player = CreatePlayer(name);
+        }
+
+        private static string ReadName()
+        {
             Dialogues.Write("acquaintance");
             var name = Console.ReadLine();
-
-            m_Player = CreatePlayer(name);
+            if (String.IsNullOrWhiteSpace(name))
+            {
+                Dialogues.Write("wrong_name");
+                ReadName();
+            }
+            return name;
         }
 
         public static void ReadCommand()
@@ -45,7 +55,7 @@ namespace FindTheCat
 
         private static void DoCommand(string command)
         {
-            switch(command)
+            switch (command)
             {
                 case "я":
                     m_Player.GetInfo();
@@ -102,9 +112,9 @@ namespace FindTheCat
 
         private static void GenerateMap()
         {
-            for(int i = 0; i < Nh; i++)
+            for (int i = 0; i < Nh; i++)
             {
-                for(int j = 0; j < Nv; j++)
+                for (int j = 0; j < Nv; j++)
                 {
                     Rooms[i, j] = new Room(i, j);
                     Rooms[i, j].GenerateItems(itemTypes);

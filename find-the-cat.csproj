@@ -10,6 +10,14 @@
   <ItemGroup>
     <None Remove="dialogues\acquaintance.txt" />
     <None Remove="dialogues\help.txt" />
+    <None Remove="dialogues\no_command_error.txt" />
+    <None Remove="dialogues\no_east.txt" />
+    <None Remove="dialogues\no_items.txt" />
+    <None Remove="dialogues\no_north.txt" />
+    <None Remove="dialogues\no_south.txt" />
+    <None Remove="dialogues\no_west.txt" />
+    <None Remove="dialogues\show_items.txt" />
+    <None Remove="dialogues\show_player_info.txt" />
     <None Remove="dialogues\wait_command.txt" />
     <None Remove="dialogues\welcome.txt" />
   </ItemGroup>
@@ -19,6 +27,30 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="dialogues\help.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="dialogues\no_command_error.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="dialogues\no_east.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="dialogues\no_items.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="dialogues\no_north.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="dialogues\no_south.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="dialogues\no_west.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="dialogues\show_items.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="dialogues\show_player_info.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="dialogues\wait_command.txt">

@@ -2,7 +2,7 @@
 using System.IO;
 using System.Security.Cryptography;
 
-namespace find_the_cat
+namespace FindTheCat
 {
     class Program
     {

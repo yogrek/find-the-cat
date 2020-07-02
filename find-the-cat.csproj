@@ -3,7 +3,8 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>find_the_cat</RootNamespace>
+    <RootNamespace>FindTheCat</RootNamespace>
+    <AssemblyName>FindTheCat</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

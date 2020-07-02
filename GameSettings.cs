@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 
-namespace find_the_cat
+namespace FindTheCat
 {
     public static class GameSettings
     {

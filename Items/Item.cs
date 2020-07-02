@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace find_the_cat
+namespace FindTheCat
 {
     public abstract class Item
     {

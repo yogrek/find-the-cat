@@ -5,7 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 
-namespace find_the_cat
+namespace FindTheCat
 {
     public class Room
     {

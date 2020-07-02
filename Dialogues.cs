@@ -9,7 +9,7 @@ namespace FindTheCat
 {
     public static class Dialogues
     {
-        private static string dialoguesPath = Path.Combine(Directory.GetCurrentDirectory(), "dialogues");
+        private static readonly string dialoguesPath = Path.Combine(Directory.GetCurrentDirectory(), "dialogues");
 
         public static void Write(string dialogue)
         {

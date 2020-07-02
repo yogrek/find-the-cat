@@ -48,10 +48,7 @@ namespace FindTheCat
                 return;
             }
             Dialogues.Write("show_items");
-            foreach (var item in Items)
-            {
-                Console.WriteLine(item.Name);
-            }
+            Items.ToList().ForEach(i => Console.WriteLine(i.Name));
         }
 
         public bool IsOnTopBorder()

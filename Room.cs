@@ -44,10 +44,10 @@ namespace FindTheCat
         {
             if (Items.Count == 0)
             {
-                Console.WriteLine("В этой комнате ничего нет.");
+                Dialogues.Write("no_items");
                 return;
             }
-            Console.WriteLine("В этой комнате ты видишь:");
+            Dialogues.Write("show_items");
             foreach (var item in Items)
             {
                 Console.WriteLine(item.Name);

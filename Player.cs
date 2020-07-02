@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace FindTheCat
@@ -27,7 +28,7 @@ namespace FindTheCat
 
         public void GetInfo()
         {
-            Console.WriteLine($"Меня зовут {Name}. Я ищу своего котика Уголька.");
+            Dialogues.Write("show_player_info", Name);
         }
 
         public void Go(Direction dir)
@@ -83,7 +84,7 @@ namespace FindTheCat
             }
             else
             {
-                Console.WriteLine("Вы не можете двигаться на север.");
+                Dialogues.Write("no_north");
             }
         }
 
@@ -95,7 +96,7 @@ namespace FindTheCat
             }
             else
             {
-                Console.WriteLine("Вы не можете двигаться на запад.");
+                Dialogues.Write("no_west");
             }
         }
 
@@ -107,7 +108,7 @@ namespace FindTheCat
             }
             else
             {
-                Console.WriteLine("Вы не можете двигаться на восток.");
+                Dialogues.Write("no_east");
             }
         }
 
@@ -119,7 +120,7 @@ namespace FindTheCat
             }
             else
             {
-                Console.WriteLine("Вы не можете двигаться на юг.");
+                Dialogues.Write("no_south");
             }
         }
     }

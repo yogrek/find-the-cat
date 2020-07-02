@@ -18,7 +18,6 @@ namespace FindTheCat
         public static Room[,] Rooms = new Room[Nh, Nv];
 
         private static Player m_Player;
-        private static string dialoguesPath = Directory.GetCurrentDirectory() + @"\dialogues";
         private static List<Type> itemTypes = new List<Type>();
 
         static GameSettings()
@@ -30,10 +29,8 @@ namespace FindTheCat
 
         public static void StartGame()
         {
-            var welcome = ReadDialogue("welcome");
-            welcome.ToList().ForEach(i => Console.WriteLine(i.ToString()));
-            var acquaintance = ReadDialogue("acquaintance");
-            acquaintance.ToList().ForEach(i => Console.Write(i.ToString()));
+            Dialogues.Write("welcome");
+            Dialogues.Write("acquaintance");
             var name = Console.ReadLine();
 
             m_Player = CreatePlayer(name);
@@ -41,8 +38,7 @@ namespace FindTheCat
 
         public static void ReadCommand()
         {
-            var wait_command = ReadDialogue("wait_command");
-            wait_command.ToList().ForEach(i => Console.Write(i.ToString()));
+            Dialogues.Write("wait_command");
             var command = Console.ReadLine().ToLower();
             DoCommand(command);
         }
@@ -70,25 +66,15 @@ namespace FindTheCat
                     m_Player.Go(Direction.Left);
                     break;
                 case "помощь":
-                    var help = ReadDialogue("help");
-                    help.ToList().ForEach(i => Console.WriteLine(i.ToString()));
+                    Dialogues.Write("help");
                     break;
                 case "выход":
                     Exit();
                     break;
                 default:
-                    Console.WriteLine("Нет такой команды.");
+                    Dialogues.Write("no_command_error");
                     break;
             }
-        }
-
-        private static string[] ReadDialogue(string fileName)
-        {
-            string dialoguePath = dialoguesPath + @"\" + fileName + ".txt";
-            if (!File.Exists(dialoguePath))
-                throw new Exception($"No such file or directory: {dialoguePath}");
-
-            return File.ReadAllLines(dialoguePath);
         }
 
         private static Player CreatePlayer(string name)
@@ -135,7 +121,7 @@ namespace FindTheCat
             int catY = rnd.Next(Nv);
 
             Rooms[catX, catY].Items.Add(new Cat());
-            Console.WriteLine($"Котик в комнате ({catX}, {catY})");
+            //Console.WriteLine($"Котик в комнате ({catX}, {catY})");
         }
 
         private static void Exit()

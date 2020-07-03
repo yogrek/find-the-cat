@@ -63,12 +63,12 @@ namespace FindTheCat
 
         public bool IsOnRightBorder()
         {
-            return Y == GameSettings.Nh - 1;
+            return Y == Game.Nh - 1;
         }
 
         public bool IsOnBottomBorder()
         {
-            return X == GameSettings.Nv - 1;
+            return X == Game.Nv - 1;
         }
     }
 }

@@ -80,7 +80,7 @@ namespace FindTheCat
         {
             if (!CurrentRoom.IsOnTopBorder())
             {
-                CurrentRoom = GameSettings.Rooms[CurrentRoom.X - 1, CurrentRoom.Y];
+                CurrentRoom = Game.Rooms[CurrentRoom.X - 1, CurrentRoom.Y];
             }
             else
             {
@@ -92,7 +92,7 @@ namespace FindTheCat
         {
             if (!CurrentRoom.IsOnLeftBorder())
             {
-                CurrentRoom = GameSettings.Rooms[CurrentRoom.X, CurrentRoom.Y - 1];
+                CurrentRoom = Game.Rooms[CurrentRoom.X, CurrentRoom.Y - 1];
             }
             else
             {
@@ -104,7 +104,7 @@ namespace FindTheCat
         {
             if (!CurrentRoom.IsOnRightBorder())
             {
-                CurrentRoom = GameSettings.Rooms[CurrentRoom.X, CurrentRoom.Y + 1];
+                CurrentRoom = Game.Rooms[CurrentRoom.X, CurrentRoom.Y + 1];
             }
             else
             {
@@ -116,7 +116,7 @@ namespace FindTheCat
         {
             if (!CurrentRoom.IsOnBottomBorder())
             {
-                CurrentRoom = GameSettings.Rooms[CurrentRoom.X + 1, CurrentRoom.Y];
+                CurrentRoom = Game.Rooms[CurrentRoom.X + 1, CurrentRoom.Y];
             }
             else
             {

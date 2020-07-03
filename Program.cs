@@ -8,10 +8,10 @@ namespace FindTheCat
     {
         static void Main(string[] args)
         {
-            GameSettings.StartGame();
+            Game.Start();
             while (true)
             {
-                GameSettings.ReadCommand();
+                Controller.ReadCommand();
             }
         }
     }

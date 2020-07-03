@@ -9,7 +9,7 @@ using System.Reflection.Metadata.Ecma335;
 
 namespace FindTheCat
 {
-    public static class GameSettings
+    public static class Game
     {
         // Number of horizontal cells
         public static readonly int Nh = 10;
@@ -19,8 +19,9 @@ namespace FindTheCat
         public static Player m_Player;
 
         private static List<Type> itemTypes = new List<Type>();
+        private static Random random;
 
-        static GameSettings()
+        static Game()
         {
             GetTypes();
             GenerateMap();
@@ -39,8 +40,8 @@ namespace FindTheCat
 
         public static Room GenerateRoom()
         {
-            var rnd = new Random();
-            return Rooms[rnd.Next(Nh), rnd.Next(Nv)];
+            random = new Random();
+            return Rooms[random.Next(Nh), random.Next(Nv)];
         }
 
         private static void GetTypes()
@@ -71,12 +72,8 @@ namespace FindTheCat
 
         private static void SpawnTheCat()
         {
-            var rnd = new Random();
-            int catX = rnd.Next(Nh);
-            int catY = rnd.Next(Nv);
-
-            Rooms[catX, catY].Items.Add(new Cat());
-            //Console.WriteLine($"Котик в комнате ({catX}, {catY})");
+            random = new Random();
+            Rooms[random.Next(Nh), random.Next(Nv)].Items.Add(new Cat());
         }
     }
 }

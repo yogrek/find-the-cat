@@ -10,7 +10,7 @@ namespace FindTheCat
         {
             Dialogues.Write("welcome");
             var name = ReadName();
-            GameSettings.m_Player = new Player(name, GameSettings.GenerateRoom());
+            Game.m_Player = new Player(name, Game.GenerateRoom());
         }
 
         public static void ReadCommand()
@@ -37,28 +37,28 @@ namespace FindTheCat
             switch (command)
             {
                 case "я":
-                    GameSettings.m_Player.ShowInfo();
+                    Game.m_Player.ShowInfo();
                     break;
                 case "осмотреться":
-                    GameSettings.m_Player.LookAround();
+                    Game.m_Player.LookAround();
                     break;
                 case "идти на север":
-                    GameSettings.m_Player.Go(Direction.Up);
+                    Game.m_Player.Go(Direction.Up);
                     break;
                 case "идти на юг":
-                    GameSettings.m_Player.Go(Direction.Down);
+                    Game.m_Player.Go(Direction.Down);
                     break;
                 case "идти на восток":
-                    GameSettings.m_Player.Go(Direction.Right);
+                    Game.m_Player.Go(Direction.Right);
                     break;
                 case "идти на запад":
-                    GameSettings.m_Player.Go(Direction.Left);
+                    Game.m_Player.Go(Direction.Left);
                     break;
                 case "помощь":
                     Dialogues.Write("help");
                     break;
                 case "выход":
-                    GameSettings.Exit();
+                    Game.Exit();
                     break;
                 default:
                     Dialogues.Write("no_command_error");

@@ -51,24 +51,12 @@ namespace FindTheCat
             Items.ToList().ForEach(i => Console.WriteLine(i.Name));
         }
 
-        public bool IsOnTopBorder()
-        {
-            return X == 0;
-        }
+        public bool IsOnTopBorder() => X == 0;
 
-        public bool IsOnLeftBorder()
-        {
-            return Y == 0;
-        }
+        public bool IsOnLeftBorder() => Y == 0;
 
-        public bool IsOnRightBorder()
-        {
-            return Y == Game.Nh - 1;
-        }
+        public bool IsOnRightBorder() => Y == Game.Nh - 1;
 
-        public bool IsOnBottomBorder()
-        {
-            return X == Game.Nv - 1;
-        }
+        public bool IsOnBottomBorder() => X == Game.Nv - 1;
     }
 }

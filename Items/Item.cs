@@ -19,9 +19,6 @@ namespace FindTheCat
             IsAlive = isAlive;
         }
 
-        public virtual string GetInfo()
-        {
-            return $"{Name}: {Description}.";
-        }
+        public virtual string GetInfo() => $"{Name}: {Description}.";
     }
 }

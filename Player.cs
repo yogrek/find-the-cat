@@ -26,7 +26,7 @@ namespace FindTheCat
             CurrentRoom = new Room(startRoom);
         }
 
-        public void GetInfo()
+        public void ShowInfo()
         {
             Dialogues.Write("show_player_info", Name);
         }

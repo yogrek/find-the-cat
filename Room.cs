@@ -5,7 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 
-namespace find_the_cat
+namespace FindTheCat
 {
     public class Room
     {
@@ -28,50 +28,23 @@ namespace find_the_cat
             Items = new List<Item>(r.Items);
         }
 
-        public void GenerateItems(List<Type> itemTypes)
-        {
-            var rnd = new Random();
-            int itemsCount = rnd.Next(0, 3);
-            Items = new List<Item>(itemsCount);
-            for (int i = 0; i < itemsCount; i++)
-            {
-                var item = itemTypes[rnd.Next(itemTypes.Count)];
-                Items.Add((Item)Activator.CreateInstance(item));
-            }
-        }
-
         public void ShowItems()
         {
             if (Items.Count == 0)
             {
-                Console.WriteLine("В этой комнате ничего нет.");
+                Dialogues.Write("no_items");
                 return;
             }
-            Console.WriteLine("В этой комнате ты видишь:");
-            foreach (var item in Items)
-            {
-                Console.WriteLine(item.Name);
-            }
+            Dialogues.Write("show_items");
+            Items.ToList().ForEach(i => Console.WriteLine(i.Name));
         }
 
-        public bool IsOnTopBorder()
-        {
-            return X == 0;
-        }
+        public bool IsOnTopBorder() => X == 0;
 
-        public bool IsOnLeftBorder()
-        {
-            return Y == 0;
-        }
+        public bool IsOnLeftBorder() => Y == 0;
 
-        public bool IsOnRightBorder()
-        {
-            return Y == GameSettings.Nh - 1;
-        }
+        public bool IsOnRightBorder() => Y == Game.Nh - 1;
 
-        public bool IsOnBottomBorder()
-        {
-            return X == GameSettings.Nv - 1;
-        }
+        public bool IsOnBottomBorder() => X == Game.Nv - 1;
     }
 }

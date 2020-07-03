@@ -2,16 +2,16 @@
 using System.IO;
 using System.Security.Cryptography;
 
-namespace find_the_cat
+namespace FindTheCat
 {
     class Program
     {
         static void Main(string[] args)
         {
-            GameSettings.StartGame();
+            Game.Start();
             while (true)
             {
-                GameSettings.ReadCommand();
+                Controller.ReadCommand();
             }
         }
     }

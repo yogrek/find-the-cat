@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace find_the_cat
+namespace FindTheCat
 {
     public class Chair : Item
     {

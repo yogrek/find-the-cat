@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace find_the_cat
+namespace FindTheCat
 {
     public abstract class Item
     {
@@ -19,9 +19,6 @@ namespace find_the_cat
             IsAlive = isAlive;
         }
 
-        public virtual string GetInfo()
-        {
-            return $"{Name}: {Description}.";
-        }
+        public virtual string GetInfo() => $"{Name}: {Description}.";
     }
 }

@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
-namespace find_the_cat
+namespace FindTheCat
 {
     public enum Direction
     {
@@ -25,9 +26,9 @@ namespace find_the_cat
             CurrentRoom = new Room(startRoom);
         }
 
-        public void GetInfo()
+        public void ShowInfo()
         {
-            Console.WriteLine($"Меня зовут {Name}. Я ищу своего котика Уголька.");
+            Dialogues.Write("show_player_info", Name);
         }
 
         public void Go(Direction dir)
@@ -66,7 +67,7 @@ namespace find_the_cat
             }
             else
             {
-                Console.WriteLine("Вы не можете взять этот предмет.");
+                Dialogues.Write("cannot_take");
             }
         }
 
@@ -79,11 +80,11 @@ namespace find_the_cat
         {
             if (!CurrentRoom.IsOnTopBorder())
             {
-                CurrentRoom = GameSettings.Rooms[CurrentRoom.X - 1, CurrentRoom.Y];
+                CurrentRoom = Game.Rooms[CurrentRoom.X - 1, CurrentRoom.Y];
             }
             else
             {
-                Console.WriteLine("Вы не можете двигаться на север.");
+                Dialogues.Write("no_north");
             }
         }
 
@@ -91,11 +92,11 @@ namespace find_the_cat
         {
             if (!CurrentRoom.IsOnLeftBorder())
             {
-                CurrentRoom = GameSettings.Rooms[CurrentRoom.X, CurrentRoom.Y - 1];
+                CurrentRoom = Game.Rooms[CurrentRoom.X, CurrentRoom.Y - 1];
             }
             else
             {
-                Console.WriteLine("Вы не можете двигаться на запад.");
+                Dialogues.Write("no_west");
             }
         }
 
@@ -103,11 +104,11 @@ namespace find_the_cat
         {
             if (!CurrentRoom.IsOnRightBorder())
             {
-                CurrentRoom = GameSettings.Rooms[CurrentRoom.X, CurrentRoom.Y + 1];
+                CurrentRoom = Game.Rooms[CurrentRoom.X, CurrentRoom.Y + 1];
             }
             else
             {
-                Console.WriteLine("Вы не можете двигаться на восток.");
+                Dialogues.Write("no_east");
             }
         }
 
@@ -115,11 +116,11 @@ namespace find_the_cat
         {
             if (!CurrentRoom.IsOnBottomBorder())
             {
-                CurrentRoom = GameSettings.Rooms[CurrentRoom.X + 1, CurrentRoom.Y];
+                CurrentRoom = Game.Rooms[CurrentRoom.X + 1, CurrentRoom.Y];
             }
             else
             {
-                Console.WriteLine("Вы не можете двигаться на юг.");
+                Dialogues.Write("no_south");
             }
         }
     }

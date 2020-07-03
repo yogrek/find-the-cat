@@ -63,7 +63,7 @@ namespace FindTheCat
                 for (int j = 0; j < Nv; j++)
                 {
                     Rooms[i, j] = new Room(i, j);
-                    Rooms[i, j].GenerateItems(itemTypes);
+                    ItemGenerator.Generate(itemTypes, Rooms[i, j]);
                     //Console.Write($"({Rooms[i, j].X}, {Rooms[i, j].Y})  ");
                 }
                 //Console.WriteLine();

@@ -28,18 +28,6 @@ namespace FindTheCat
             Items = new List<Item>(r.Items);
         }
 
-        public void GenerateItems(List<Type> itemTypes)
-        {
-            var rnd = new Random();
-            int itemsCount = rnd.Next(0, 3);
-            Items = new List<Item>(itemsCount);
-            for (int i = 0; i < itemsCount; i++)
-            {
-                var item = itemTypes[rnd.Next(itemTypes.Count)];
-                Items.Add((Item)Activator.CreateInstance(item));
-            }
-        }
-
         public void ShowItems()
         {
             if (Items.Count == 0)
